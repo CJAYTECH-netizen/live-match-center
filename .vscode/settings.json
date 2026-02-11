@@ -1,0 +1,8 @@
+{
+  "css.lint.unknownAtRules": "ignore",
+  "css.validate": true,
+  "editor.formatOnSave": true,
+  "[json]": {
+    "editor.formatOnSave": true
+  }
+}

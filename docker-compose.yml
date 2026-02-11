@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: live-match-center
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      NEXT_PUBLIC_API_BASE_URL: https://profootball.srv883830.hstgr.cloud
+    restart: unless-stopped
+
+  # For local backend development (optional)
+  # backend:
+  #   build:
+  #     context: ../live-match-backend
+  #     dockerfile: Dockerfile
+  #   environment:
+  #     PORT: 5000
+  #     MONGODB_URI: mongodb://mongo:27017/football
+  #   depends_on:
+  #     - mongo
+  #   ports:
+  #     - "5000:5000"
+
+  # mongo:
+  #   image: mongo:6
+  #   container_name: football-db
+  #   ports:
+  #     - "27017:27017"
+  #   volumes:
+  #     - mongo_data:/data/db
+
+# volumes:
+#   mongo_data:
