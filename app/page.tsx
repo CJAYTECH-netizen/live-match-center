@@ -2,9 +2,8 @@ import LiveUpdates from "@/app/components/LiveUpdates";
 import { Match } from "@/app/types/match";
 
 async function getMatches() {
-  const baseUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
   const res = await fetch(
-    `${baseUrl}/api/matches`,
+    "https://live-match-center-blond.vercel.app/api/matches",
     { cache: "no-store" }
   );
 

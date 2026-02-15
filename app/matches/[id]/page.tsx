@@ -3,9 +3,8 @@ import { DetailedMatch } from "@/app/types/match";
 import MatchDetailsWrapper from "@/app/components/MatchDetailsWrapper";
 
 async function getMatch(id: string) {
-  const baseUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
   const res = await fetch(
-    `${baseUrl}/api/matches/${id}`,
+    `https://live-match-center-blond.vercel.app/api/matches/${id}`,
     { cache: "no-store" }
   );
 
