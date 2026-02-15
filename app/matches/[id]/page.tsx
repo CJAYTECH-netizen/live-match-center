@@ -3,8 +3,9 @@ import { DetailedMatch } from "@/app/types/match";
 import MatchDetailsWrapper from "@/app/components/MatchDetailsWrapper";
 
 async function getMatch(id: string) {
+  const baseUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
   const res = await fetch(
-    `https://profootball.srv883830.hstgr.cloud/api/matches/${id}`,
+    `${baseUrl}/api/matches/${id}`,
     { cache: "no-store" }
   );
 

@@ -2,8 +2,9 @@ import LiveUpdates from "@/app/components/LiveUpdates";
 import { Match } from "@/app/types/match";
 
 async function getMatches() {
+  const baseUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
   const res = await fetch(
-    "https://profootball.srv883830.hstgr.cloud/api/matches",
+    `${baseUrl}/api/matches`,
     { cache: "no-store" }
   );
 
