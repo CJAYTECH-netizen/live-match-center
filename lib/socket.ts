@@ -41,9 +41,8 @@ export const connectSocket = (): Socket => {
       transports: ["websocket"],
       reconnection: true,
       reconnectionDelay: RECONNECT_DELAY,
-      reconnectionDelayMax: 10000,
-      reconnectionAttempts: 3,
       reconnectionDelayMax: 5000,
+      reconnectionAttempts: 3,
     });
 
     socket.on("connect", () => {
